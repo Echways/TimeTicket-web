@@ -10,4 +10,4 @@ from .models import *
 
 class MainView(ListView):
     model = Event
-    template_name = 'govno.html'
+    template_name = 'index.html'
