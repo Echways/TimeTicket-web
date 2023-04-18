@@ -11,7 +11,7 @@ class Event(models.Model):
     eventminage = models.IntegerField('Минимальный возраст для посещения', default=0)
     evemntpic = models.ImageField('Промо-фото', upload_to='imgs/events/', default=0)
 
-    hostname = models.SlugField('Организатор', max_length=100, default="")
+    hostname = models.SlugField('Организатор', max_length=100, default="", allow_unicode=1)
     hostemail = models.EmailField('Почта организатора', max_length=100, default="")
     hosttg = models.CharField('Телеграм', max_length=100, default="")
 
