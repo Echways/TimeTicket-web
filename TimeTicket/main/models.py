@@ -1,5 +1,6 @@
 from django.db import models
 from datetime import datetime
+from django.core.validators import FileExtensionValidator
 
 
 class Event(models.Model):
@@ -15,6 +16,10 @@ class Event(models.Model):
     hostemail = models.EmailField('Почта организатора', max_length=100, default="")
     hosttg = models.CharField('Телеграм', max_length=100, default="")
 
-
     def __str__(self):
         return self.eventname
+
+
+class ProductVideo(models.Model):
+    video = models.FileField(upload_to='video/', validators=[FileExtensionValidator(allowed_extensions=['mp4'])])
+    product = models.ForeignKey(Event, on_delete=models.CASCADE, related_name='File')

@@ -8,6 +8,6 @@ from django.views.decorators.http import require_http_methods
 from itertools import chain
 from .models import *
 
-class MainView(ListView):
-    model = Event
-    template_name = 'index.html'
+
+def get_list_event(request):
+    return render(request, 'html/index.html', {'event_list': Event.objects.all(),})
