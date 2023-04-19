@@ -3,12 +3,19 @@
 {% block content %}
 
 {% for event in event_list %}
-<div>
-    <img src={{ event.evemntpic.url }}>
-    {% for video in event.File.all %}
-        <video width="600" height="600" controls preload="auto"><source src={{ video.video.url }} type="video/mp4"></video>
-    {% endfor %}
-    <hr>
+<div class="container">
+    <div class="carousel">
+    </div>
+    <div class="eventcontainer">
+        <div class="eventline">
+            <div class="event">
+            </div>
+            <div class="event">
+            </div>                
+            <div class="event">
+            </div>
+        </div>
+    </div>
 </div>
 {% endfor %}
 

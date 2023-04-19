@@ -1,4 +1,45 @@
 {% extends 'base.html' %}
 {% block content %}
+<div class="container">
+    <div class="account-inner">
+        <div class="account-window">
+            <h1 class="account-title">Настройки</h1>
+            <div class="input-container">
+                <div class="input-question">Логин</div>
+                <input class="form-control" type="text" value="{{ profiledata.username }}">
+            </div>
+            <div class="input-container">
+                <div class="input-question">Фамилия</div>
+                <input class="form-control" type="text">
+            </div>
+            <div class="input-container">  
+                <div class="input-question">Имя</div>
+                <input class="form-control" type="text">
+            </div>
+            <div class="input-container">  
+                <div class="input-question">Отчество</div>
+                <input class="form-control" type="text">
+            </div>
+            <div class="input-container">  
+                <div class="input-question">Email</div>
+                <input type="email" class="form-control" type="text">
+            </div>
+            <div class="input-container">  
+                <div class="input-question">Телефон</div>
+                <input type="tel" maxlength="12"  class="form-control" type="text">
+            </div>
+            <div class="account-buttons">
+                <div class="left buttons">
+                    <input type="button" value="Выйти" class="sign-out-button">
+                    <input type="button" value="Изменить пароль" class="change-password-button">
+                </div>
+                                    <div class="my-events">
+                <a href="userevents.html" class="my-events-button">Мои мероприятия</a>
+            </div>
+                <input type="button" class="save-button" value="Сохранить">
+            </div>
 
+        </div>
+    </div>
+</div>
 {% endblock content %}

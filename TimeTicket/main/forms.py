@@ -8,48 +8,49 @@ class SignUp(UserCreationForm):
         max_length=100,
         required=True,
         help_text='Enter Email Address',
-        widget=forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Email'}),
+        widget=forms.TextInput(attrs={'class': 'form-control'}),
     )
     mobilephone = forms.IntegerField(
         required=True,
         help_text='Введите телефон',
-        widget=forms.TextInput(attrs={'class': 'form-control', 'placeholder': '+79999999999'}),
+        widget=forms.TextInput(attrs={'class': 'form-control'}),
     )
     first_name = forms.CharField(
         max_length=100,
         required=True,
         help_text='Enter First Name',
-        widget=forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'First Name'}),
+        widget=forms.TextInput(attrs={'class': 'form-control'}),
     )
     last_name = forms.CharField(
         max_length=100,
         required=True,
         help_text='Enter Last Name',
-        widget=forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Last Name'}),
+        widget=forms.TextInput(attrs={'class': 'form-control'}),
     )
     middle_name = forms.CharField(
         max_length=100,
         required=True,
         help_text='Введите отчество',
-        widget=forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Отчество'}),
+        widget=forms.TextInput(attrs={'class': 'form-control'}),
     )
     username = forms.CharField(
         max_length=200,
         required=True,
         help_text='Enter Username',
-        widget=forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Username'}),
+        widget=forms.TextInput(attrs={'class': 'form-control'}),
     )
     password1 = forms.CharField(
         help_text='Enter Password',
         required=True,
-        widget=forms.PasswordInput(attrs={'class': 'form-control', 'placeholder': 'Password'}),
+        widget=forms.PasswordInput(attrs={'class': 'form-control'}),
     )
     password2 = forms.CharField(
         required=True,
         help_text='Enter Password Again',
-        widget=forms.PasswordInput(attrs={'class': 'form-control', 'placeholder': 'Password Again'}),
+        widget=forms.PasswordInput(attrs={'class': 'form-control'}),
     )
     check = forms.BooleanField(required=True)
+
 
     class Meta:
         model = User

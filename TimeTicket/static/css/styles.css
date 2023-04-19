@@ -1,0 +1,387 @@
+/* HEADER */
+body {
+    background-color: #ECECEC;
+}
+.header {
+    height: 60px;
+    background-color: #686de0;
+    position: fixed;
+    display: inline-block;
+    width: 100%;
+    left: 0;
+    top: 0;
+    right: 0;
+    justify-content: space-between;
+    font-family: 'Roboto';
+    user-select: none;
+    z-index: 1000;
+}
+
+.logo-title {
+    font-weight: 700;
+    color: white;
+    font-size: 30px;
+}
+
+
+
+.header-inner {
+    justify-content: space-between;
+    display: flex;
+    align-items: center;
+}
+
+.header-logo {
+    display: inline-flex;
+    align-items: center;
+}
+
+.logo {
+    height: 40px;
+    width: 40px;
+    margin-right: 10px;
+    margin-left: 10px;
+}
+
+.container {
+    margin-top: 10px;
+}
+
+
+
+/*NAVIGATION (header)*/
+.nav-link {
+    text-decoration: none;
+    color: white;
+    margin-right: 25px;
+}
+
+.nav-link:after {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 2px;
+    background-color: #fff;
+    position: relative;
+    top: 100%;
+    left: 0;
+    z-index: 1;
+    opacity: 0;
+    transition: opacity .2s linear;
+    border-radius: 10px;
+}
+
+.nav-link:hover:after {
+    opacity: 1;
+}
+nav {
+    display: flex;
+    color: white;
+    font-size: 20px;
+    position: relative;
+    font-weight: 700;
+    align-items: center;
+}
+
+
+
+
+
+/* MAINBODY account.html*/
+.account-inner {
+    position: absolute;
+    display: block;
+    width: 100%;
+    top: 0;
+    left: 0;
+    overflow: auto;
+}
+
+.account-window {
+    width: 70%;
+    margin: auto;
+    background-color: white;
+    padding-bottom: 30px;
+    margin-top: 100px;
+    border-radius: 10px;
+    font-family: 'Roboto';
+    font-size: 16px;
+    padding-top: 5px;
+    padding-right: 20px;
+}
+
+.account-title {
+    text-align: center;
+    margin-bottom: -5px;
+    margin-left: 30px;
+}
+.input-question {
+    text-align: left;
+    margin-left: 30px;
+}
+
+.form-control {
+    width: 82%;
+    margin-left: 150px;
+    height: 30px;
+    font-size: 20px;
+    border-radius: 10px;
+    padding-left: 7px;
+    background-color: #ECECEC;
+    outline: none;
+    border: none;
+}
+
+.form-control:hover {
+    box-shadow: 0 2px 5px 0 #7f8c8d;
+    transition-duration: .5s;
+}
+.form-control:focus {
+    box-shadow: 0 2px 5px 0 #7f8c8d;
+    transition-duration: .5s;
+}
+
+.input-container {
+    display: inline-flex;
+    align-items: center;
+    width: 100%;
+    margin-top: 20px;
+    margin-right: 10px;
+}
+
+.input-question {
+    font-size: 20px;
+    position: absolute;
+}
+
+
+
+/*КНОПКИ account.html*/
+.account-buttons {
+    position: relative; 
+    width: 100%;
+    display: inline-flex;
+    justify-content: space-between;
+    margin-top: 20px;
+    text-align: center;
+    border: 0 none;
+    font-family: 'Roboto';
+    font-size: 15px;
+}
+
+.left-buttons {
+    display: flex;
+    border-radius: 10px;
+    margin-left: 30px;
+    width: 150px;
+    height: 30px;
+}
+
+.my-events-button {
+    width: 200px;
+    display: block;
+    text-decoration: none;
+    background-color: #686de0;
+    color: white;
+    height: 30px;
+    border-radius: 10px;
+    vertical-align: center;
+    line-height: 30px;
+           font-family: 'Roboto';
+    font-size: 15px;
+        user-select: none;
+    margin: auto;
+}
+
+.myevents {
+    text-align: center;
+    display: inline-flex;
+}
+
+.my-events-button:hover {
+    background-color: #3238d5;
+    transition-duration: .3s
+}
+
+.my-events-button:active {
+    background-color: #686de0;
+    transition: linear 1s;
+}
+
+.save-button {
+    display: inline-block;
+    width: 200px;
+        font-family: 'Roboto';
+    font-size: 15px;
+            padding: 5px 5px;
+    background: #ECECEC; 
+    border: 0 none;
+    cursor: pointer;
+    border-radius: 10px;
+        font-family: 'Roboto';
+    font-size: 15px;
+    margin-right: 15px;
+}
+
+.change-password-button {
+    display: inline-block;
+    position: sticky;
+    width: 140px;
+    height: 30px;
+    border-radius: 0px 10px 10px 0px;
+    cursor: pointer;
+    margin-left: -4px;
+    border: 0 none;
+        font-family: 'Roboto';
+    font-size: 15px;
+        background: #ECECEC; 
+}
+
+.sign-out-button {
+    display: inline-block;
+    position: sticky;
+    width: 60px;
+    margin-left: 30px;
+    height: 30px;
+        padding:5px 5px;
+    background: #ECECEC; 
+    border: 0 none;
+    cursor: pointer;
+    border-radius: 10px 0px 0px 10px;
+        font-family: 'Roboto';
+    font-size: 15px;
+}
+
+.sign-out-button:hover, .change-password-button:hover, .save-button:hover {
+    background-color: #bdbdbd;
+    transition-duration: .3s
+}
+
+.sign-out-button:active, .change-password-button:active, .save-button:active {
+    background-color: #ececec;
+    transition: linear 1s;
+}
+
+
+
+
+/*REGISTER*/
+.register-container {
+    width: 100%;
+    margin-top: 20px;
+    margin-left: 20px;
+    display: flex;
+    text-align: center;
+    position: relative;
+    margin-right: 
+}
+
+.register-payment-button {
+    width: 200px;
+    display: block;
+    text-decoration: none;
+    background-color: #686de0;
+    color: white;
+    height: 30px;
+    border-radius: 10px;
+    vertical-align: center;
+    text-align: center;
+    line-height: 30px;
+           font-family: 'Roboto';
+    font-size: 15px;
+        user-select: none;
+    margin: auto;
+}
+
+.register-payment-button:hover {
+    background-color: #3238d5;
+    transition-duration: .3s
+}
+
+.register-payment-button:active {
+    background-color: #686de0;
+    transition: linear 1s;
+}
+ 
+.politic-checkbox {
+    margin-left: 280px;
+    width: 20px;
+    margin-top: 6px;
+    height: 30px;
+    font-size: 20px;
+    border-radius: 10px;
+    padding-left: 7px;
+    background-color: #ECECEC;
+    outline: none;
+    border: none;
+}
+
+.terms {
+    color: black;
+}
+
+.politic-checkbox:checked {
+    background-color: red;
+} 
+
+
+
+/* EVENTS index.html*/
+.eventcontainer {
+    position: absolute;
+    left: 0;
+    top: 30px;
+    right: 0;
+    width: 100%;
+}
+
+.eventinner {
+    width: 90%;
+    margin: auto;
+    display: flex;
+    justify-content: normal;
+    align-items: center;
+    flex-wrap: wrap;
+    
+}
+.event {
+    background-color: white;
+    width: 350px;
+    border-radius: 10px;
+    height: 400px;
+    display: flex;
+    position: relative;
+    margin-left: 50px;
+    margin-top: 50px;
+}
+
+
+.event-image {
+    display: block;
+    position: relative;
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 10px 10px 0px 0px;
+}
+
+.uzbek {
+    margin: auto;
+    display: block;
+    position: relative;
+    width: 70%;
+    text-align: center;
+}
+
+.checkbox {
+    margin-left: 280px;
+    width: 20px;
+    margin-top: 6px;
+    height: 30px;
+    font-size: 20px;
+    border-radius: 10px;
+    padding-left: 7px;
+    background-color: #ECECEC;
+    outline: none;
+    border: none;
+}

@@ -30,7 +30,7 @@ def register(request):
     if request.method == 'GET':
         form = SignUp()
         context = {'form': form}
-        return render(request, 'registration/signup.html', context)
+        return render(request, 'profileadd.html', context)
 
     if request.method == 'POST':
         form = SignUp(request.POST)
@@ -41,5 +41,5 @@ def register(request):
         else:
             print('Form is not valid')
             context = {'form': form}
-            return render(request, 'registration/signup.html', context)
-    return render(request, 'registration/signup.html', {})
+            return render(request, 'profileadd.html', context)
+    return render(request, 'profileadd.html', {})
