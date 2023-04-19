@@ -18,7 +18,7 @@ from .forms import *
 
 class MainView(ListView):
     model = Event
-    template_name = 'index.html'
+    template_name = 'base.html'
 
 
 class ProfileView(ListView):
