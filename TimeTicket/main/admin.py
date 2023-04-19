@@ -4,10 +4,17 @@ from django.forms import TextInput, Textarea
 from django.db import models
 
 
-# class SpellcheckAdd(admin.ModelAdmin):
-#     formfield_overrides = {
-#         models.CharField: {'widget': TextInput(attrs={'Spellcheck': 'true'})},
-#     }
+class ProductVideoAdmin(admin.ModelAdmin):
+    pass
 
 
-admin.site.register(Event),
+class ProductVideoInline(admin.StackedInline):
+    model = ProductVideo
+
+
+class ProductAdmin(admin.ModelAdmin):
+    inlines = [ProductVideoInline]
+
+
+admin.site.register(ProductVideo, ProductVideoAdmin)
+admin.site.register(Event, ProductAdmin)
