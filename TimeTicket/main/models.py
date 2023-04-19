@@ -1,5 +1,6 @@
 from django.db import models
 from datetime import datetime
+from django.contrib.auth.models import User
 
 
 class Event(models.Model):
@@ -13,8 +14,16 @@ class Event(models.Model):
 
     hostname = models.SlugField('Организатор', max_length=100, default="", allow_unicode=1)
     hostemail = models.EmailField('Почта организатора', max_length=100, default="")
-    hosttg = models.CharField('Телеграм', max_length=100, default="")
+    hosttg = models.CharField('Телеграм организатора', max_length=100, default="")
 
 
     def __str__(self):
         return self.eventname
+
+class Profile(models.Model):
+    user = models.OneToOneField(User, on_delete=models.CASCADE)
+    mobileph = models.IntegerField()
+    email = models.EmailField()
+    lastname = models.CharField(max_length=100)
+    firstname = models.CharField(max_length=100)
+    middlename = models.CharField(max_length=100)
