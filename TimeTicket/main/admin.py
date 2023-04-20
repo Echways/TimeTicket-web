@@ -13,8 +13,12 @@ class ProductVideoInline(admin.StackedInline):
     model = ProductVideo
 
 
+class RegisterEventInline(admin.StackedInline):
+    model = RegisterEvent
+
+
 class ProductAdmin(admin.ModelAdmin):
-    inlines = [ProductVideoInline]
+    inlines = [ProductVideoInline, RegisterEventInline]
 
 
 userfields = list(UserAdmin.fieldsets)
@@ -22,5 +26,6 @@ userfields[1] = ('Личная информация', {'fields': ('first_name', 
 UserAdmin.fieldsets = tuple(userfields)
 
 admin.site.register(ProductVideo, ProductVideoAdmin)
+admin.site.register(RegisterEvent)
 admin.site.register(Event, ProductAdmin)
 admin.site.register(NewUser, UserAdmin)

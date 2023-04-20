@@ -2,6 +2,7 @@ from django import forms
 from django.contrib.auth.models import User
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.forms import AuthenticationForm
+from .models import *
 
 from .models import *
 
@@ -20,6 +21,17 @@ class SignUpForm(UserCreationForm):
         model = NewUser
         fields = ('username', 'first_name', 'last_name', 'middle_name', 'email', 'mobilephone')
 
-# class LoginForm(AuthenticationForm):
-#     username = forms.CharField(max_length=100, widget=forms.TextInput(attrs={'class':'login-input'}))
-#     password = forms.CharField(max_length=100, widget=forms.PasswordInput(attrs={'class':'login-input'}))
+
+class EventRegForm(forms.ModelForm):
+    class Meta:
+        model = RegisterEvent
+        fields = ['name', 'surname', 'email', 'event_id']
+
+
+
+
+
+
+
+
+
