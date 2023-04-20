@@ -1,60 +1,25 @@
 from django import forms
 from django.contrib.auth.models import User
 from django.contrib.auth.forms import UserCreationForm
+from django.contrib.auth.forms import AuthenticationForm
+
+from .models import *
 
 
-class SignUp(UserCreationForm):
-    email = forms.EmailField(
-        max_length=100,
-        required=True,
-        help_text='Enter Email Address',
-        widget=forms.TextInput(attrs={'class': 'form-control'}),
-    )
-    mobilephone = forms.IntegerField(
-        required=True,
-        help_text='Введите телефон',
-        widget=forms.TextInput(attrs={'class': 'form-control'}),
-    )
-    first_name = forms.CharField(
-        max_length=100,
-        required=True,
-        help_text='Enter First Name',
-        widget=forms.TextInput(attrs={'class': 'form-control'}),
-    )
-    last_name = forms.CharField(
-        max_length=100,
-        required=True,
-        help_text='Enter Last Name',
-        widget=forms.TextInput(attrs={'class': 'form-control'}),
-    )
-    middle_name = forms.CharField(
-        max_length=100,
-        required=True,
-        help_text='Введите отчество',
-        widget=forms.TextInput(attrs={'class': 'form-control'}),
-    )
-    username = forms.CharField(
-        max_length=200,
-        required=True,
-        help_text='Enter Username',
-        widget=forms.TextInput(attrs={'class': 'form-control'}),
-    )
-    password1 = forms.CharField(
-        help_text='Enter Password',
-        required=True,
-        widget=forms.PasswordInput(attrs={'class': 'form-control'}),
-    )
-    password2 = forms.CharField(
-        required=True,
-        help_text='Enter Password Again',
-        widget=forms.PasswordInput(attrs={'class': 'form-control'}),
-    )
-    check = forms.BooleanField(required=True)
-
+class SignUpForm(UserCreationForm):
+    email = forms.EmailField(widget=forms.EmailInput(attrs={'class':'form-control'}))
+    first_name = forms.CharField(max_length=100, widget=forms.TextInput(attrs={'class':'form-control'}))
+    last_name = forms.CharField(max_length=100, widget=forms.TextInput(attrs={'class':'form-control'}))
+    middle_name = forms.CharField(max_length=100, widget=forms.TextInput(attrs={'class':'form-control'}))
+    mobilephone = forms.CharField(max_length=12, widget=forms.TextInput(attrs={'class':'form-control'}))
+    password1 = forms.CharField(max_length=100, widget=forms.PasswordInput(attrs={'class':'form-control'}))
+    password2 = forms.CharField(max_length=100, widget=forms.PasswordInput(attrs={'class':'form-control'}))
+    username = forms.CharField(max_length=100, widget=forms.TextInput(attrs={'class':'form-control'}))
 
     class Meta:
-        model = User
-        fields = (
-            'username', 'email', 'mobilephone', 'first_name', 'last_name', 'middle_name', 'password1', 'password2',
-            'check',
-        )
+        model = NewUser
+        fields = ('username', 'first_name', 'last_name', 'middle_name', 'email', 'mobilephone')
+
+# class LoginForm(AuthenticationForm):
+#     username = forms.CharField(max_length=100, widget=forms.TextInput(attrs={'class':'login-input'}))
+#     password = forms.CharField(max_length=100, widget=forms.PasswordInput(attrs={'class':'login-input'}))

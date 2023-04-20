@@ -20,26 +20,20 @@ class MainView(ListView):
     model = Event
     template_name = 'index.html'
 
+    def get_context_data(self, *args, **kwargs):
+        context = {'Eventlist': Event.objects.all()}
+        return context
+
 
 class ProfileView(ListView):
     model = Event
     template_name = 'profileview.html'
 
+# class UserLoginView(CreateView):
+#     form_class = LoginForm
+#     template_name = 'registration/login.html'
 
-def register(request):
-    if request.method == 'GET':
-        form = SignUp()
-        context = {'form': form}
-        return render(request, 'profileadd.html', context)
-
-    if request.method == 'POST':
-        form = SignUp(request.POST)
-        if form.is_valid():
-            form.save()
-            userid = form.cleaned_data.get('username')
-            return render(request, 'profileview.html', {'profiledata': User.objects.all().filter(username=userid)})
-        else:
-            print('Form is not valid')
-            context = {'form': form}
-            return render(request, 'profileadd.html', context)
-    return render(request, 'profileadd.html', {})
+class UserRegView(CreateView):
+    form_class = SignUpForm
+    template_name = 'registration/registration.html'
+    # success_url = '../../account/profile/'

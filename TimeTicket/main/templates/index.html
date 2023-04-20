@@ -2,26 +2,24 @@
 
 {% block content %}
 
-{% for event in event_list %}
 <div class="container">
-    <div class="carousel">
-    </div>
-    <div class="eventcontainer">
-        <div class="eventline">
-            <div class="event">
+            <div class="carousel">
             </div>
-            <div class="event">
-            </div>                
-            <div class="event">
-            </div>
+            <div class="eventcontainer">
+                <div class="eventinner">
+                    {% for i in Eventlist %}
+                    <div class="event">
+                        <div class="event-window-container">
+                            <div class="event-window-inner">
+                                <img class="event-image" src="{{ i.eventpic.url }}">
+                                <h1 class="event-title">{{ i.eventtitle }}</h1>
+                                <div class="event-description">{{ i.eventdescription }}</div>
+                                <a class="event-more" href="event.html">Подробнее</a>
+                            </div>
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
         </div>
-    </div>
 </div>
-{% endfor %}
-      {% if user.is_authenticated %}
-        <p>Hi {{ user.username }}!</p>
-      {% else %}
-        <p>You are not logged in.</p>
-        <a href="{% url 'login' %}">Log In</a>
-      {% endif %}
 {% endblock content %}

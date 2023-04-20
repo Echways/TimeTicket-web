@@ -1,17 +1,37 @@
 {% extends 'base.html' %}
+{% load static %}
 {% block title %}Login{% endblock %}
 
 {% block content %}
-  <h2>Login</h2>
-  
-    <form method="post">
-      {% csrf_token %}
-      <table>
-        {{ form.as_p }}
-        <tr>
-          <td>&nbsp;</td>
-          <td><input type="submit" value="Submit"></td>
-        </tr>                
-      </table>
-    </form>
+
+<form method="post" action="{% url 'login' %}">
+{% csrf_token %}
+    <div class="login">
+        <div class="container">
+            <div class="login-window">
+                <div class="login-logo-container">
+                    <div class="login-logo"><a href="index.html"><img src="{% static 'img/logo.svg' %}"></a></div>
+                    <div class="login-title">Авторизация</div>
+                </div>
+                <div class="login-inner">
+                  {% for i in form %}
+                <div class="login-input-container">
+                    <div class="login-question">{{ i.label_tag }}</div>
+                  {{ i }}
+                </div>
+                  {% endfor %}
+                    <div class="login-options">
+                            <input type="submit" value="Войти" class="login-button">
+                        <div class="sign-in-offer">Нет аккаунта? <a href="{% url 'signup' %}" class="sign-up-link">Зарегистрируйтесь!</a></div>
+                    </div>
+                    {% if form.errors %}
+                    <div class="wrong-password">
+                    <strong class="wrong-password">Неверные данные</strong>
+                    </div>
+                    {% endif %}
+                    </div>
+                </div>
+            </div>
+    </div>
+</form>
 {% endblock %}

@@ -113,7 +113,7 @@ nav {
 .account-title {
     text-align: center;
     margin-bottom: -5px;
-    margin-left: 30px;
+    margin-left: 10px;
 }
 .input-question {
     text-align: left;
@@ -273,10 +273,10 @@ nav {
     display: flex;
     text-align: center;
     position: relative;
-    margin-right: 
+    margin-left: 0px;
 }
 
-.register-payment-button {
+.register-button {
     width: 200px;
     display: block;
     text-decoration: none;
@@ -286,19 +286,24 @@ nav {
     border-radius: 10px;
     vertical-align: center;
     text-align: center;
-    line-height: 30px;
+    line-height: 20px;
            font-family: 'Roboto';
     font-size: 15px;
         user-select: none;
     margin: auto;
+
+    border-left-width: 0px;
+    border-right-width: 0px;
+    border-top-width: 0px;
+    border-bottom-width: 0px;
 }
 
-.register-payment-button:hover {
+.register-button:hover {
     background-color: #3238d5;
     transition-duration: .3s
 }
 
-.register-payment-button:active {
+.register-button:active {
     background-color: #686de0;
     transition: linear 1s;
 }
@@ -324,6 +329,29 @@ nav {
     background-color: red;
 } 
 
+.reg-error {
+    margin: auto;
+    display: block;
+    position: relative;
+    width: 200px;
+    text-align: center;
+    margin-top:15px;
+    color: #e74c3c;
+
+}
+
+.checkbox {
+    margin-left: 280px;
+    width: 20px;
+    margin-top: 6px;
+    height: 30px;
+    font-size: 20px;
+    border-radius: 10px;
+    padding-left: 7px;
+    background-color: #ECECEC;
+    outline: none;
+    border: none;
+}
 
 
 /* EVENTS index.html*/
@@ -333,6 +361,8 @@ nav {
     top: 30px;
     right: 0;
     width: 100%;
+    font-family: 'Roboto';
+    font-size: 15px;
 }
 
 .eventinner {
@@ -342,7 +372,7 @@ nav {
     justify-content: normal;
     align-items: center;
     flex-wrap: wrap;
-    
+
 }
 .event {
     background-color: white;
@@ -359,29 +389,111 @@ nav {
 .event-image {
     display: block;
     position: relative;
-    width: 100%;
+    width: 350px;
     height: 200px;
     object-fit: cover;
     border-radius: 10px 10px 0px 0px;
 }
 
-.uzbek {
-    margin: auto;
-    display: block;
-    position: relative;
-    width: 70%;
+.event-title {
+    font-size: 20px;
     text-align: center;
 }
 
-.checkbox {
-    margin-left: 280px;
-    width: 20px;
-    margin-top: 6px;
-    height: 30px;
-    font-size: 20px;
-    border-radius: 10px;
-    padding-left: 7px;
-    background-color: #ECECEC;
-    outline: none;
-    border: none;
+.event-description {
+    padding-left: 15px;
+    padding-right: 15px;
+    margin-bottom: 10px;
+    overflow: hidden;
+    max-width: 350px;
+    max-height: 55px;
 }
+
+.event-more {
+    display: block;
+    top: 350px;
+    position: absolute;
+    width: 200px;
+    text-align: center;
+    height: 30px;
+    line-height: 30px;
+    margin-left: 75px;
+    text-decoration: none;
+    color: white;
+    border-radius: 10px;
+    background-color: #686DDF;
+}
+
+.event-more:hover {
+    background-color: #3238d5;
+    transition-duration: .3s
+}
+
+.event-more:active {
+    background-color: #686de0;
+    transition: linear 1s;
+}
+
+/*  Login */
+
+.login {    width: 100%;
+    padding-top: 40px; margin:40px;}
+.login-window {
+    background-color: white;    width: 500px;
+    height: 400px;    margin: auto;
+    position: relative;    display: block;
+    border-radius: 10px;    padding-top: 20px;
+    font-family: 'Roboto';}
+.login-logo {
+    height: 150px;    width: 150px;
+    margin: auto;    user-select: none;
+}
+.login-title {
+    font-size: 20px;
+    font-weight: 700;    text-align: center;
+    margin-top: 10px;}
+
+.login-input {    width: 65%;
+    margin-left: 50px;    height: 30px;
+    font-size: 20px;    border-radius: 10px;
+    background-color: #ECECEC;    outline: none;
+    border: none;    margin-right: 5%;
+    margin-left: 23%;
+    padding-left: 5px;}
+.login-input-container {    display: inline-flex;
+    align-items: center;    width: 100%;
+    margin-top: 10px;    margin-right: 10px;
+    justify-content: space-between;    margin-bottom: 10px;
+}
+.login-question {    font-size: 20px;
+    margin-left: 7%;    display: flex;
+    position: absolute;}
+.login-button {
+    position: relative;    display: block;
+    background-color: #686de0;    width: 150px;
+    color: white;    border-radius: 10px;
+    height: 30px;    margin: auto;
+    margin-top: 10px;    line-height: 30px;
+    cursor: pointer;    user-select: none;
+    margin-bottom: 10px;}
+.login-button:hover {
+    background-color: #3238d5;    transition-duration: .3s
+}
+.login-button:active {    background-color: #686de0;
+    transition: linear 1s;}
+.login-options {
+    width: 100%;    text-align: center;
+}
+.sign-up-offer {    position: relative;
+    display: block;}
+.sign-up-link {
+    color: black;}
+.wrong-password {    margin: auto;
+    display: block;    position: relative;
+    width: 100%;    text-align: center;
+    margin-top: 10px;    color: #e74c3c;
+}
+.login-input:hover {    box-shadow: 0 2px 5px 0 #7f8c8d;
+    transition-duration: .5s;}
+.login-input:focus {    box-shadow: 0 2px 5px 0 #7f8c8d;
+    transition-duration: .5s;}

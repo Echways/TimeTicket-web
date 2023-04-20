@@ -5,14 +5,20 @@
 {% endblock head %}
 {% block content %}
 
+<!--<form method="post">-->
+<!--    {% csrf_token %}-->
+<!--    {{form}}-->
+<!--    <input type="submit" value="Register">-->
+<!--</form>-->
+
 <form class="login-form" method="POST">
 {% csrf_token %}
-    
+
 <div class="container">
     <div class = "account-inner">
         <div class="account-window">
             <h1 class="account-title">Регистрация</h1>
-                        
+
         <div class="input-container">
             <div class="input-question">
                 Логин
@@ -69,25 +75,25 @@
             {{form.email}}
         </div>
 
-        <div class="input-container">
-                <div class="input-question">
-                    Согласен с <a class="terms" href="#">условиями</a>
-                </div>
-                <div class="politic-checkbox">
-                    {{form.check}}
-                </div>
-        </div>
-            
+<!--        <div class="input-container">-->
+<!--                <div class="input-question">-->
+<!--                    Согласен с <a class="terms" href="#">условиями</a>-->
+<!--                </div>-->
+<!--                <div class="politic-checkbox">-->
+<!--                    {{form.check}}-->
+<!--                </div>-->
+<!--        </div>-->
+
         <div class="register-container">
-            <button class="register-payment-button" type="submit" >Зарегистрироваться</button>
+            <button class="register-button" type="submit" >Зарегистрироваться</button>
         </div>
-            
+
         <div class="">
             {% if form.errors %}
                 {% for field in form %}
                 {% for error in field.errors %}
                 <div class="">
-                <strong class="uzbek">{{ error|escape }}</strong>
+                <strong class="reg-error">{{ error|escape }}</strong>
                 </div>
                 {% endfor %}
                 {% endfor %}
@@ -97,5 +103,7 @@
     </div>
 </div>
 </form>
+
+
 
 {% endblock content %}
