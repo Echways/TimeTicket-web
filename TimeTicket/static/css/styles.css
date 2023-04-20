@@ -742,3 +742,75 @@ nav {
     margin-top: 20px;
     margin-right: -20px;
 }
+
+/*PURCHASE */
+.select-purchase {
+    width: 83%;
+    margin-left: 150px;
+    height: 30px;
+    font-size: 20px;
+    border-radius: 10px;
+    padding-left: 7px;
+    background-color: #ECECEC;
+    outline: none;
+    border: none;
+    padding-right: 45px;
+}
+
+.select-purchase:hover {
+    box-shadow: 0 2px 5px 0 #7f8c8d;
+    transition-duration: .5s;
+}
+.input-settings:focus {
+    box-shadow: 0 2px 5px 0 #7f8c8d;
+    transition-duration: .5s;
+}
+
+.pay-button {
+    text-align: center;
+    margin-top: 20px;
+    margin-right: -20px;
+}
+
+/*Event-detail*/
+.attachment {
+    background-color: white;
+    width: 350px;
+    border-radius: 10px;
+    height: 200px;
+    display: flex;
+    position: relative;
+    margin-left: 50px;
+    margin-top: 50px;
+}
+
+
+.attachment-image {
+    display: block;
+    position: relative;
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.back-button {
+    position: relative;
+    display: block;
+    margin-top: 80px;
+    text-decoration: none;
+    color: black;
+    cursor: pointer;
+}
+
+.material-symbols-outlined {
+color: black;
+    width: 30px;
+    height: 30px;
+}
+
+.back-button-link {
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+}
