@@ -15,5 +15,10 @@
     {% for video in event.File.all %}
     <video width="600px" height="600px" controls preload="auto" src="{{ video.video.url }}" type="video/mp4"></video>
     {% endfor %}
+
+    {% for reg in event.RegisterEvent.all %}
+    <p>{{ reg.name }} {{ reg.surname }}</p>
+    {% endfor %}
+
 </div>
 {% endblock content%}

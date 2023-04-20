@@ -14,5 +14,6 @@ urlpatterns = [
     path('account/', include('django.contrib.auth.urls')),
     path('account/logout/', LogoutView.as_view(), name='logout'),
     path('event/<int:pk>/', views.event_detail, name='event_detail'),
-    path('reg_event', views.reg_event, name='reg_event')
+    path('reg_event', views.reg_event, name='reg_event'),
+    path('pdf/<int:pk>/', views.pdf_e, name='pdf_e')
 ]
