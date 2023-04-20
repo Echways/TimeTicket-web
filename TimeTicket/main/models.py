@@ -30,6 +30,8 @@ class ProductVideo(models.Model):
     product = models.ForeignKey(Event, on_delete=models.CASCADE, related_name='File')
 
 
+
+
 class Profile(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
     mobileph = models.IntegerField()

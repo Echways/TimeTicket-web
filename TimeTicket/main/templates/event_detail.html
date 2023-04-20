@@ -6,6 +6,11 @@
     <h1>{{ event.eventname }}</h1>
 </div>
 <div>
+
+    <p>Дата начала: {{ event.eventstartday }}</p>
+
+    <p>До начала: {{ start_event }}</p>
+
     <p>Вложения</p>
     {% for video in event.File.all %}
     <video width="600px" height="600px" controls preload="auto" src="{{ video.video.url }}" type="video/mp4"></video>

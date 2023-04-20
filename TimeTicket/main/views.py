@@ -15,6 +15,7 @@ from itertools import chain
 from django.shortcuts import render, get_object_or_404
 from .models import *
 from .forms import *
+import datetime
 
 
 class MainView(ListView):
@@ -32,9 +33,30 @@ def all_event(request):
     return render(request, 'index.html', {'event': event})
 
 
+def plural_days(n):
+    """ Склонение день/дней/дня """
+    days = ['день', 'дня', 'дней']
+    if n % 10 == 1 and n % 100 != 11:
+        p = 0
+    elif 2 <= n % 10 <= 4 and (n % 100 < 10 or n % 100 >= 20):
+        p = 1
+    else:
+        p = 2
+    return str(n) + ' ' + days[p]
+
+
 def event_detail(request, pk):
     event = get_object_or_404(Event, pk=pk)
-    return render(request, 'event_detail.html', {'event': event})
+    q = event.eventstartday - datetime.datetime.now(datetime.timezone.utc)
+    q = str(q).split()
+    st = int(q[0]) + 1
+    if st > 0:
+        start_event = plural_days(st)
+    elif st == 0:
+        start_event = 'Сегодня'
+    else:
+        start_event = 'Мероприятие прошло'
+    return render(request, 'event_detail.html', {'event': event, 'start_event': start_event})
 
 
 def register(request):
