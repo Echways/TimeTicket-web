@@ -1,3 +1,5 @@
+import os
+
 from django.contrib import messages
 from django.contrib.auth import login, authenticate
 from django.views.generic import ListView
@@ -7,7 +9,7 @@ from django.views.generic.edit import CreateView
 from django.shortcuts import render, redirect
 from django.http import HttpResponseRedirect
 from django.views.generic.detail import DetailView
-from django.http import HttpResponse
+from django.http import HttpResponse, Http404
 from django.http import JsonResponse
 from django.views.generic.edit import UpdateView
 from django.views.decorators.http import require_http_methods
@@ -16,11 +18,8 @@ from django.shortcuts import render, get_object_or_404
 from .models import *
 from .forms import *
 import datetime
-import smtplib
-from email.mime.text import MIMEText
-from email.mime.multipart import MIMEMultipart
-from email.mime.image import MIMEImage
-
+from django.conf import settings
+import pandas as pd
 
 
 class MainView(ListView):
@@ -39,6 +38,7 @@ class ProfileView(ListView):
 # class UserLoginView(CreateView):
 #     form_class = LoginForm
 #     template_name = 'registration/login.html'
+
 
 class UserRegView(CreateView):
     form_class = SignUpForm
@@ -62,6 +62,27 @@ def plural_days(n):
     else:
         p = 2
     return str(n) + ' ' + days[p]
+
+
+def pdf_e(request, pk):
+    event = RegisterEvent.objects.filter(event_id_id__exact=pk)
+
+    columns = ['Name', 'Surname']
+
+    data = []
+    for ev in event:
+        data.append([ev.name, ev.surname])
+
+    df = pd.DataFrame(data, columns=columns)
+    df.to_csv(r"output.csv")
+
+    download_path = 'C:/Users/alexs/PycharmProject/nn20233/TimeTicket/output.csv'
+    if os.path.exists(download_path):
+        with open(download_path, 'rb') as fh:
+            response = HttpResponse(fh.read(), content_type="application/adminupload")
+            response['Content-Disposition'] = 'inline; filename=' + os.path.basename(download_path)
+            return response
+    raise Http404
 
 
 def event_detail(request, pk):
