@@ -44,6 +44,7 @@ class UserRegView(CreateView):
     form_class = SignUpForm
     template_name = 'registration/registration.html'
     # success_url = '../../account/profile/'
+
 def all_event(request):
     event = Event.objects.all()
     return render(request, 'index.html', {'event': event})
