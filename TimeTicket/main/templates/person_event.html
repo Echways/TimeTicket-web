@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container">
+            <div class="main-event-inner">
+                <div class="my-event-window">
+                    <div class="my-event-info-container">
+                        <img src="img/events/2.png" class="my-event-img">
+                        <div class="main-event-host-title">Организатор</div>
+                        <div class="main-event-host-description-container">
+                            <img class="main-event-host-avatar" src="{{ event.hostpic.url }}">
+                            <div class="main-event-host-description">Хонджун Мосейбеков</div>
+                        </div>
+
+                        <a class="purchase-button" style="text-decoration:none" href="#">Вложения</a>
+                    </div>
+                </div>
+                <div class="my-event-description">
+                    <div class="description-container">
+                        <div class="my-event-description-title">ICPC: подготовка с нуля до участника 1/4 финала</div>
+                        <div class="my-description">На мероприятии, направленном на подготовку к ICPC(International Collegiate Programming Contest) - Международной студенческой олипиаде по программированию, Вы сможете прослушать лекции, проводимые абсолютными победителями 2021 и 2022 годов.<br>Это мероприятие является первой частью цикла конференций, предназначенных для желающих осуществить самостоятельную подготовку к Олипиаде и содержит в себе большое количество полезной информации просто для желающих повысить свой навык программирования.
+                        </div>
+                        <div class="event-info">
+                            <div class="event-time-left">До начала мероприятия осталось: X дней</div>
+                            <div class="event-date">Дата проведения: xx.xx.xxxx</div>
+                            <div class="event-place">Место проведения: Place</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+{% endblock content%}

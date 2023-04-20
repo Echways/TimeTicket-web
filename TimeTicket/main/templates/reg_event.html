@@ -1,0 +1,48 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<form method="post" action="{% url 'login' %}">
+{% csrf_token %}
+<div class="container">
+            <div class="account-inner">
+                <div class="account-window">
+                    <h1 class="account-title">Оплата билета</h1>
+                    <div class="input-container">
+                        <div class="input-question">Фамилия</div>
+                        <input class="input-settings" type="text">
+                    </div>
+                    <div class="input-container">
+                        <div class="input-question">Имя</div>
+                        <input class="input-settings" type="text">
+                    </div>
+                     <div class="input-container">
+                        <div class="input-question">Email</div>
+                        <input type="email" class="input-settings" type="text">
+                    </div>
+                    <div class="input-container">
+                        <div class="input-question">Событие</div>
+                        <select class="select-purchase">
+                            <option>ICPC</option>
+                            <option>Технострелка</option>
+                        </select>
+                    </div>
+                    <div class="input-container">
+                        <div class="input-question">Тип билета</div>
+                        <select class="select-purchase">
+                            <option>Стандартный билет</option>
+                            <option>Билет с кофе</option>
+                            <option>Билет с обедом</option>
+                            <option>VIP билет</option>
+                        </select>
+                    </div>
+                    <div class="pay-button-container">
+                    <div class="pay-button">
+                        <a href="#" class="my-events-button">Оплатить</a>
+                    </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+</form>
+{% endblock content%}

@@ -45,6 +45,8 @@ class UserRegView(CreateView):
     template_name = 'registration/registration.html'
     success_url = '../../account/profile/'
 
+class ProfileEventsView(ListView):
+    model = Event
 
 def plural_days(n):
     """ Склонение день/дней/дня """
@@ -81,6 +83,9 @@ def pdf_e(request, pk):
 
 def event_detail(request, pk):
     event = get_object_or_404(Event, pk=pk)
+    hostnameclean = ' '.join(str(event.hostname).replace('_', '-').split('-'))
+    ticket_coffee = int(event.ticketprice_base) + int(event.ticketprice_coffee)
+    ticket_dinner = int(event.ticketprice_base) + int(event.ticketprice_dinner)
     q = event.eventstartday - datetime.datetime.now(datetime.timezone.utc)
     q = str(q).split()
     st = int(q[0]) + 1
@@ -90,7 +95,7 @@ def event_detail(request, pk):
         start_event = 'Сегодня'
     else:
         start_event = 'Мероприятие прошло'
-    return render(request, 'event_detail.html', {'event': event, 'start_event': start_event})
+    return render(request, 'event_detail.html', {'event': event, 'start_event': start_event, 'hostname':hostnameclean, 'ticket_coffee': ticket_coffee, 'ticket_dinner': ticket_dinner})
 
 
 def reg_event(request):
