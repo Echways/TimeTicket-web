@@ -15,7 +15,8 @@ urlpatterns = [
     path('account/logout/', LogoutView.as_view(), name='logout'),
     path('event/<int:pk>/', views.event_detail, name='event_detail'),
     path('reg_event', views.reg_event, name='reg_event'),
-    path('pdf/<int:pk>/', views.pdf_e, name='pdf_e')
-    path('reg_event/', views.reg_event, name='reg_event'),
-    path('account/profile/events/', ProfileEventsView.as_view(), name='profileevents')
+    path('pdf/<int:pk>/', views.pdf_e, name='pdf_e'),
+    path('account/passwordchange/', views.change_password, name='passwordchange'),
+    path('account/profile/events/', ProfileEventsView.as_view(), name='profileevents'),
+    path('account/profile/events/videos/', ProfileEventVideosView.as_view(), name='profileeventvideos'),
 ]

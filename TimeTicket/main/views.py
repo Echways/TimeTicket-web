@@ -1,7 +1,7 @@
 import os
 
 from django.contrib import messages
-from django.contrib.auth import login, authenticate
+from django.contrib.auth import login, authenticate, update_session_auth_hash
 from django.views.generic import ListView
 from django.urls import reverse_lazy
 from django.contrib.auth.forms import UserCreationForm
@@ -20,6 +20,8 @@ from .forms import *
 import datetime
 from django.conf import settings
 import pandas as pd
+from django.contrib.auth.forms import PasswordChangeForm
+from django.contrib import messages
 
 
 class MainView(ListView):
@@ -39,6 +41,10 @@ class ProfileView(ListView):
 #     form_class = LoginForm
 #     template_name = 'registration/login.html'
 
+
+class ProfileEventVideosView(ListView):
+    model = Event;
+    template_name = 'person_event_videos.html'
 
 class UserRegView(CreateView):
     form_class = SignUpForm
@@ -134,6 +140,22 @@ def reg_event(request):
     else:
         form = EventRegForm()
     return render(request, 'reg_event.html', {'form': form})
+
+def change_password(request):
+    if request.method == 'POST':
+        form = PasswordChangeForm(request.user, request.POST)
+        if form.is_valid():
+            user = form.save()
+            update_session_auth_hash(request, user)
+            messages.success(request, 'Пароль изменен успешно!')
+            return redirect('change_password')
+        else:
+            messages.error(request, 'Неверный ввод.')
+    else:
+        form = PasswordChangeForm(request.user)
+    return render(request, 'change_password.html', {
+        'form': form
+    })
 
 
 

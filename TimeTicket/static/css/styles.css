@@ -1,6 +1,7 @@
 /* HEADER */
 body {
-    background-color: #ECECEC;
+    background: url(../../media/imgs/beck.png);
+    background-size: 75%;
 }
 .header {
     height: 60px;
