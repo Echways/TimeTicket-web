@@ -1,19 +1,43 @@
 {% extends 'base.html' %}
 
 {% block content %}
-
-<div>
-    <h1>{{ event.eventname }}</h1>
-</div>
-<div>
-
-    <p>Дата начала: {{ event.eventstartday }}</p>
-
-    <p>До начала: {{ start_event }}</p>
-
-    <p>Вложения</p>
+ <p>Вложения</p>
     {% for video in event.File.all %}
     <video width="600px" height="600px" controls preload="auto" src="{{ video.video.url }}" type="video/mp4"></video>
     {% endfor %}
-</div>
+
+<div class="container">
+            <div class="main-event-inner">
+                <div class="main-event-window">
+                    <div class="main-event-info-container">
+                        <img src="{{ event.eventpic.url }}" class="main-event-img">
+                        <div class="main-event-host-title">Организатор</div>
+                        <div class="main-event-host-description-container">
+                            <img class="main-event-host-avatar" src="{{ event.hostpic.url }}">
+                            <div class="main-event-host-description">{{ hostname }}</div>
+                        </div>
+                        <input type="text" placeholder="Введите промокод" class="promocode">
+                        <a class="purchase-button" href="purchase.html" style="text-decoration:none">Купить билет</a>
+                    </div>
+                </div>
+                <div class="main-event-description">
+                    <div class="description-container">
+                        <div class="description-title">{{ event.eventslogan }}</div>
+                        <div class="description">{{ event.eventdescription }}
+                        </div>
+                        <div class="ticket-prices">
+                            <div class="ticket-price">Стандартный билет: 1000 рублей</div>
+                            <div class="ticket-price">Билет кофе: 1500 рублей</div>
+                            <div class="ticket-price">Билет с обедом: 1800 рублей</div>
+                            <div class="ticket-price">VIP билет: 5000 рублей</div>
+                        </div>
+                        <div class="event-info">
+                            <div class="event-time-left">До начала мероприятия осталось: {{ start_event }}</div>
+                            <div class="event-date">Дата проведения: {{ event.eventstartday }}</div>
+                            <div class="event-place">Место проведения: {{ event.eventplace }}</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
 {% endblock content%}

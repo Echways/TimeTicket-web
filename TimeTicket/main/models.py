@@ -18,13 +18,17 @@ class Event(models.Model):
     eventtitle = models.CharField('Название мероприятия', max_length=100, default="")
     eventstartday = models.DateTimeField('Начало мероприятия', default=datetime.now())
     eventendday = models.DateTimeField('Конец мероприятия', default=datetime.now())
+    eventdescriptionshort = models.CharField('Краткое описание', max_length=80, default="")
+    eventslogan = models.CharField('Слоган', max_length=80, default="")
     eventdescription = models.CharField('Описание мероприятия', max_length=500, default="")
     ticketprice = models.IntegerField('Цена билета', default=0)
     eventminage = models.IntegerField('Минимальный возраст для посещения', default=0)
     ticket = models.ImageField('Билет', upload_to='imgs/events/', default=0)
     eventpic = models.ImageField('Промо-фото', upload_to='imgs/events/', default=0)
-    hostpic = models.ImageField('Фото организатора', upload_to='imgs/events/avatars/', default=0)
 
+    eventplace = models.CharField('Место проведения', max_length=200, default="")
+
+    hostpic = models.ImageField('Фото организатора', upload_to='imgs/events/avatars/', default=0)
     hostname = models.SlugField('Организатор', max_length=100, default="", allow_unicode=1)
     hostemail = models.EmailField('Почта организатора', max_length=100, default="")
     hosttg = models.CharField('Телеграм организатора', max_length=100, default="")

@@ -497,3 +497,248 @@ nav {
     transition-duration: .5s;}
 .login-input:focus {    box-shadow: 0 2px 5px 0 #7f8c8d;
     transition-duration: .5s;}
+
+
+/*EVENT.HTML. СТРАНИЦА МЕРОПРИЯТИЯ */
+.main-event-inner {
+    width: 99%;
+    font-family: 'Roboto';
+    justify-content: center;
+    flex-direction: row;
+    display: flex;
+}
+
+.main-event-window {
+    height: 600px;
+    width: 600px;
+    position: relative;
+    margin-top: 70px;
+    margin-left:;
+    border-radius: 10px;
+    display: inline-flex;
+    margin-right: 20px;
+}
+
+.main-event-info-container {
+    width: 100%;
+    margin-left: 10px;
+    margin-top: 10px;
+    height: 90%;
+    background-color: white;
+    border-radius: 10px;
+    display: block;
+}
+
+.main-event-img {
+    width: 100%;
+    flex-wrap: wrap;
+    object-fit: cover;
+    border-radius: 10px;
+    height: 40%;
+}
+
+.main-event-host-title {
+    font-weight: 700;
+    font-size: 20px;
+    text-align: center;
+    margin-top: 20px;
+}
+
+.main-event-host-avatar {
+    width: 150px;
+    height: 150px;
+    flex-wrap: wrap;
+    object-fit: cover;
+    border-radius: 100px;
+    margin: auto;
+    display: block;
+    position: relative;
+    margin-top: 5px;
+}
+
+.main-event-host-description {
+    text-align: center;
+    margin-top: 5px;
+}
+
+.purchase-button {
+    display: block;
+    position: relative;
+    margin: auto;
+    width: 150px;
+    height: 30px;
+    line-height: 30px;
+    color: white;
+    border-radius: 10px;    
+    margin-top: 10px;
+    text-align: center;
+    background-color: #686de0;
+    user-select: none;
+    cursor: pointer;
+}
+
+.main-event-description {
+    width: 1200px;
+    background-color: white;
+    position: relative;
+    display: flex;
+    height: 540px;
+    margin-top: 80px;
+    border-radius: 10px;
+    padding-right: 20px;
+}
+
+.purchase-button:hover {
+    background-color: #3238d5;
+    transition-duration: .3s
+}
+
+.purchase-button:active {
+    background-color: #686de0;
+    transition: linear 1s;
+}
+
+.promocode {
+    text-align: center;
+    margin: auto;
+    display: block;
+    position: relative;
+    margin-top: 10px;
+    border-radius: 10px;
+    height: 30px;
+    width: 70%;
+    font-size: 15px;
+    background-color: #ECECEC;
+    outline: none;
+    border: none;
+}
+
+
+.description-title {
+    font-size: 25px;
+    font-weight: 700;
+    margin-left: 30px;
+    margin-top: 20px;
+    width: 100%;
+}
+
+.description {
+    margin-left: 30px;
+    margin-right: 20px;
+    height: 220px;
+}
+
+.description-container {
+}
+
+.ticket-prices {
+    height: 150px;
+    width: 100%;
+    margin-left: 30px;
+}
+
+.event-info {
+    margin-left: 30px;
+    margin-top: 20px;
+}
+
+.promocode:hover {
+    box-shadow: 0 2px 5px 0 #7f8c8d;
+    transition-duration: .5s;
+}
+.promocode:focus {
+    box-shadow: 0 2px 5px 0 #7f8c8d;
+    transition-duration: .5s;
+}
+
+
+/*MYEVENT*/
+.my-event-description {
+    width: 440px;
+    background-color: white;
+    position: relative;
+    display: flex;
+    height: 600px;
+    margin-top: 80px;
+    border-radius: 10px;
+    padding-right: 20px;
+    padding-right: 5px;
+}
+
+.my-event-description-title {
+    margin-right: 100px;
+    font-size: 25px;
+    font-weight: 700;
+    margin-left: 30px;
+    margin-top: 20px;
+    width: 100%;
+    height: 50px;
+    margin-bottom: 20px;
+}
+
+.my-event-window {
+    width: 500px;;
+    height: 600px;
+    width: 600px;
+    position: relative;
+    margin-top: 70px;
+    margin-left:;
+    border-radius: 10px;
+    display: inline-flex;
+    margin-right: 20px;
+}
+
+.my-event-img {
+    width: 100%;
+    flex-wrap: wrap;
+    object-fit: cover;
+    border-radius: 10px;
+    height: 50%;
+}
+
+.my-description {
+    margin-left: 30px;
+    margin-right: 20px;
+    height: 300px;
+    margin-top: 40px;
+}
+
+.my-event-info-container {
+    width: 100%;
+    margin-left: 10px;
+    margin-top: 10px;
+    height: 100%;
+    background-color: white;
+    border-radius: 10px;
+    display: block;
+}
+
+
+/*PURCHASE */
+.select-purchase {
+    width: 83%;
+    margin-left: 150px;
+    height: 30px;
+    font-size: 20px;
+    border-radius: 10px;
+    padding-left: 7px;
+    background-color: #ECECEC;
+    outline: none;
+    border: none;
+    padding-right: 45px;
+}
+
+.select-purchase:hover {
+    box-shadow: 0 2px 5px 0 #7f8c8d;
+    transition-duration: .5s;
+}
+.input-settings:focus {
+    box-shadow: 0 2px 5px 0 #7f8c8d;
+    transition-duration: .5s;
+}
+
+.pay-button {
+    text-align: center;
+    margin-top: 20px;
+    margin-right: -20px;
+}

@@ -9,7 +9,7 @@
                 <div class="eventinner">
                     {% for i in Eventlist %}
                     <div class="event">
-                        <div class="event-window-container">
+                        <div class="event-window-container" id="{{ forloop.counter }}">
                             <div class="event-window-inner">
                                 <img class="event-image" src="{{ i.eventpic.url }}">
                                 <h1 class="event-title">{{ i.eventtitle }}</h1>
