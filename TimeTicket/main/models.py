@@ -21,7 +21,6 @@ class Event(models.Model):
     eventdescription = models.CharField('Описание мероприятия', max_length=500, default="")
     ticketprice = models.IntegerField('Цена билета', default=0)
     eventminage = models.IntegerField('Минимальный возраст для посещения', default=0)
-    evemntpic = models.ImageField('Промо-фото', upload_to='imgs/events/', default=0)
     ticket = models.ImageField('Билет', upload_to='imgs/events/', default=0)
     eventpic = models.ImageField('Промо-фото', upload_to='imgs/events/', default=0)
     hostpic = models.ImageField('Фото организатора', upload_to='imgs/events/avatars/', default=0)

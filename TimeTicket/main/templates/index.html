@@ -14,7 +14,7 @@
                                 <img class="event-image" src="{{ i.eventpic.url }}">
                                 <h1 class="event-title">{{ i.eventtitle }}</h1>
                                 <div class="event-description">{{ i.eventdescription }}</div>
-                                <a class="event-more" href="event.html">Подробнее</a>
+                                <a class="event-more" href="{% url 'event_detail' i.pk %}">Подробнее</a>
                             </div>
                         </div>
                     </div>
