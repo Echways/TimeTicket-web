@@ -1,6 +1,7 @@
 from django import forms
 from django.contrib.auth.models import User
 from django.contrib.auth.forms import UserCreationForm
+from .models import *
 
 
 class SignUp(UserCreationForm):
@@ -58,3 +59,18 @@ class SignUp(UserCreationForm):
             'username', 'email', 'mobilephone', 'first_name', 'last_name', 'middle_name', 'password1', 'password2',
             'check',
         )
+
+
+class EventRegForm(forms.ModelForm):
+    class Meta:
+        model = RegisterEvent
+        fields = ['name', 'surname', 'email', 'event_id']
+
+
+
+
+
+
+
+
+

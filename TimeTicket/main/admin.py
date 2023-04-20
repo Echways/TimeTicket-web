@@ -12,9 +12,14 @@ class ProductVideoInline(admin.StackedInline):
     model = ProductVideo
 
 
+class RegisterEventInline(admin.StackedInline):
+    model = RegisterEvent
+
+
 class ProductAdmin(admin.ModelAdmin):
-    inlines = [ProductVideoInline]
+    inlines = [ProductVideoInline, RegisterEventInline]
 
 
 admin.site.register(ProductVideo, ProductVideoAdmin)
+admin.site.register(RegisterEvent)
 admin.site.register(Event, ProductAdmin)

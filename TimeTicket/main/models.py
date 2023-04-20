@@ -13,7 +13,7 @@ class Event(models.Model):
     ticketprice = models.IntegerField('Цена билета', default=0)
     eventminage = models.IntegerField('Минимальный возраст для посещения', default=0)
     evemntpic = models.ImageField('Промо-фото', upload_to='imgs/events/', default=0)
-
+    ticket = models.ImageField('Билет', upload_to='imgs/events/', default=0)
     hostname = models.SlugField('Организатор', max_length=100, default="", allow_unicode=1)
     hostemail = models.EmailField('Почта организатора', max_length=100, default="")
     hosttg = models.CharField('Телеграм организатора', max_length=100, default="")
@@ -30,6 +30,11 @@ class ProductVideo(models.Model):
     product = models.ForeignKey(Event, on_delete=models.CASCADE, related_name='File')
 
 
+class RegisterEvent(models.Model):
+    name = models.CharField('Имя', max_length=100, default="")
+    surname = models.CharField('Фамилия', max_length=100, default="")
+    email = models.EmailField('Ваша почта', max_length=100, default="")
+    event_id = models.ForeignKey(Event, on_delete=models.CASCADE, related_name='RegisterEvent')
 
 
 class Profile(models.Model):

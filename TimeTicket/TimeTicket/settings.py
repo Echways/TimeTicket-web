@@ -130,3 +130,11 @@ STATICFILES_DIRS = [(os.path.join(BASE_DIR,'static'))]
 
 LOGIN_REDIRECT_URL = 'profileview'
 LOGOUT_REDIRECT_URL = "login"
+
+EMAIL_USE_TLS = True
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_PORT = 587
+EMAIL_HOST_USER = 'kavantnntechnostrelka2023@gmail.com'
+EMAIL_HOST_PASSWORD = 'pobqesmqlozlimde'
+DEFAULT_FROM_EMAIL = 'sas'
+DEFAULT_TO_EMAIL = 'kavantnntechnostrelka2023@gmail.com'

@@ -16,6 +16,11 @@ from django.shortcuts import render, get_object_or_404
 from .models import *
 from .forms import *
 import datetime
+import smtplib
+from email.mime.text import MIMEText
+from email.mime.multipart import MIMEMultipart
+from email.mime.image import MIMEImage
+
 
 
 class MainView(ListView):
@@ -76,3 +81,43 @@ def register(request):
             context = {'form': form}
             return render(request, 'profileadd.html', context)
     return render(request, 'profileadd.html', {})
+
+
+def reg_event(request):
+    if request.method == 'POST':
+        form = EventRegForm(request.POST)
+        if form.is_valid():
+            ev = form.save(commit=False)
+            #print(ev.event_id_id)
+            obj = Event.objects.get(pk=ev.event_id_id)
+            #manaprint(obj.eventname)
+
+            to = ev.email
+            msg = MIMEMultipart()
+            msg['From'] = 'kavantnntechnostrelka2023@gmail.com'
+            msg['To'] = to
+            msg['Subject'] = 'Hi'
+
+            text = MIMEText('hi')
+            msg.attach(text)
+
+            with open(f'C:/Users/alexs/PycharmProject/nn202343/TimeTicket{obj.ticket.url}', 'rb') as f:
+                image = MIMEImage(f.read())
+                msg.attach(image)
+
+            with smtplib.SMTP('smtp.gmail.com', 587) as smtp:
+                smtp.starttls()
+                smtp.login('kavantnntechnostrelka2023@gmail.com', 'pobqesmqlozlimde')
+                smtp.send_message(msg)
+
+            ev.save()
+            return redirect('reg_event')
+    else:
+        form = EventRegForm()
+    return render(request, 'reg_event.html', {'form': form})
+
+
+
+
+
+
