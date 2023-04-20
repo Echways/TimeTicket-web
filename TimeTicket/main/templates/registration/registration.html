@@ -5,12 +5,6 @@
 {% endblock head %}
 {% block content %}
 
-<!--<form method="post">-->
-<!--    {% csrf_token %}-->
-<!--    {{form}}-->
-<!--    <input type="submit" value="Register">-->
-<!--</form>-->
-
 <form class="login-form" method="POST">
 {% csrf_token %}
 
@@ -74,15 +68,6 @@
                 </div>
             {{form.email}}
         </div>
-
-<!--        <div class="input-container">-->
-<!--                <div class="input-question">-->
-<!--                    Согласен с <a class="terms" href="#">условиями</a>-->
-<!--                </div>-->
-<!--                <div class="politic-checkbox">-->
-<!--                    {{form.check}}-->
-<!--                </div>-->
-<!--        </div>-->
 
         <div class="register-container">
             <button class="register-button" type="submit" >Зарегистрироваться</button>

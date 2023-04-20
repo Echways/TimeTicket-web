@@ -27,8 +27,8 @@ class Event(models.Model):
     eventplace = models.CharField('Место проведения', max_length=200, default="")
 
     ticketprice_base = models.IntegerField('Цена билета стандарт', default=0)
-    ticketprice_coffee = models.IntegerField('Цена за кофе в билете', default=0)
-    ticketprice_dinner = models.IntegerField('Цена за обед в билете', default=0)
+    ticketprice_coffee = models.IntegerField('Цена кофе-билет', default=0)
+    ticketprice_dinner = models.IntegerField('Цена обед-билет', default=0)
     ticketprice_vip = models.IntegerField('Цена за VIP билет', default=0)
 
     hostpic = models.ImageField('Фото организатора', upload_to='imgs/events/avatars/', default=0)
@@ -49,11 +49,17 @@ class ProductVideo(models.Model):
 
 
 class RegisterEvent(models.Model):
+    TICKET_CHOICES = (
+        (1, "Билет 'Standard'"),
+        (2, "Билет с обедом"),
+        (3, "Билет с кофе"),
+        (4, "Билет 'VIP'"),
+    )
     name = models.CharField('Имя', max_length=100, default="")
     surname = models.CharField('Фамилия', max_length=100, default="")
     email = models.EmailField('Ваша почта', max_length=100, default="")
     event_id = models.ForeignKey(Event, on_delete=models.CASCADE, related_name='RegisterEvent')
-
+    ticket_id = models.CharField(choices=TICKET_CHOICES, default=1, max_length=5)
 
 class Profile(models.Model):
     user = models.OneToOneField('main.NewUser', on_delete=models.CASCADE)

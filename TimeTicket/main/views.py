@@ -43,10 +43,14 @@ class ProfileView(ListView):
 class UserRegView(CreateView):
     form_class = SignUpForm
     template_name = 'registration/registration.html'
-    success_url = '../../account/profile/'
+    success_url = '../../account/login/'
 
 class ProfileEventsView(ListView):
     model = Event
+    template_name = 'person_event.html'
+    def get_context_data(self, *args, **kwargs):
+        context = {'Eventlist': Event.objects.all().filter()}
+        return context
 
 def plural_days(n):
     """ Склонение день/дней/дня """

@@ -9,7 +9,7 @@
                         <div class="main-event-host-title">Организатор</div>
                         <div class="main-event-host-description-container">
                             <img class="main-event-host-avatar" src="{{ event.hostpic.url }}">
-                            <div class="main-event-host-description">Хонджун Мосейбеков</div>
+                            <div class="main-event-host-description">{{ event.hostname }}</div>
                         </div>
 
                         <a class="purchase-button" style="text-decoration:none" href="#">Вложения</a>
@@ -17,13 +17,13 @@
                 </div>
                 <div class="my-event-description">
                     <div class="description-container">
-                        <div class="my-event-description-title">ICPC: подготовка с нуля до участника 1/4 финала</div>
-                        <div class="my-description">На мероприятии, направленном на подготовку к ICPC(International Collegiate Programming Contest) - Международной студенческой олипиаде по программированию, Вы сможете прослушать лекции, проводимые абсолютными победителями 2021 и 2022 годов.<br>Это мероприятие является первой частью цикла конференций, предназначенных для желающих осуществить самостоятельную подготовку к Олипиаде и содержит в себе большое количество полезной информации просто для желающих повысить свой навык программирования.
+                        <div class="my-event-description-title">{{ event.eventdescriptionshort }}</div>
+                        <div class="my-description">{{ event.eventdescription }}
                         </div>
                         <div class="event-info">
-                            <div class="event-time-left">До начала мероприятия осталось: X дней</div>
-                            <div class="event-date">Дата проведения: xx.xx.xxxx</div>
-                            <div class="event-place">Место проведения: Place</div>
+                            <div class="event-time-left">До начала мероприятия осталось: {{ start_event }} дней</div>
+                            <div class="event-date">Дата проведения: {{ event.eventstartday }}</div>
+                            <div class="event-place">Место проведения: {{ event.eventplace }}</div>
                         </div>
                     </div>
                 </div>

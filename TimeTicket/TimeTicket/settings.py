@@ -128,7 +128,6 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 STATICFILES_DIRS = [(os.path.join(BASE_DIR, 'static/'))]
 
-LOGIN_REDIRECT_URL = 'profileview'
 LOGOUT_REDIRECT_URL = "login"
 
 EMAIL_USE_TLS = True

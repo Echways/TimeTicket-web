@@ -30,11 +30,12 @@
             </div>
             <div class="account-buttons">
                 <div class="left buttons">
-                    <input type="button" value="Выйти" class="sign-out-button" href="{% url 'logout' %}">
+
+                    <input type="button" value="Выйти" class="sign-out-button" onClick="window.location='../logout/'">
                     <input type="button" value="Изменить пароль" class="change-password-button">
                 </div>
                                     <div class="my-events">
-                <a href="userevents.html" class="my-events-button">Мои мероприятия</a>
+                <a href="{% url 'profileevents' %}" class="my-events-button">Мои мероприятия</a>
             </div>
                 <input type="button" class="save-button" value="Сохранить">
             </div>
