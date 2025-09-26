@@ -49,7 +49,7 @@
 
 ```bash
 git clone git@github.com:Echways/TimeTicket-web.git
-cd TimeTicket-web/TimeTicket
+cd TimeTicket-web
 
 python3 -m venv .venv
 source .venv/bin/activate
@@ -58,6 +58,8 @@ pip install -r requirements.txt
 
 export SECRET_KEY="replace_this"
 export DEBUG=True
+
+cd TimeTicket
 
 python manage.py migrate
 python manage.py createsuperuser
